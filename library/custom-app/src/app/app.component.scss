@@ -1,0 +1,28 @@
+*{
+    color: white;
+}
+
+  .main{
+    overflow: hidden;
+    width: 66%;
+    user-select: none;
+    background-color: #333f57;
+  }
+  .card-content {
+    background-color: #333f57;
+    display: flex;
+    pointer-events: none;
+    behavior: smooth;
+  }
+  .card {
+    width: 200px;
+    height: 300px;
+    background-color: #819fdb;
+    margin-right: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: xx-large;
+    pointer-events: none;
+  }
+  

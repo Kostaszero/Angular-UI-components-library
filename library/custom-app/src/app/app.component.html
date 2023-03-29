@@ -1,0 +1,38 @@
+<div style="padding: 100px;display: flex; flex-flow:column;
+justify-content: center;
+align-items: center;overflow: hidden;">
+  <p>signup works!</p>
+ 
+
+  <div id="holdA" style="display:flex; justify-content:space-around;align-items:center;width: 100%;margin-bottom: 30px;" *ngFor="let ele of numOfItr;let itr=index">
+    <div [@disperse]="getValue(leftArrowState,'holdA',itr)" style="margin:0 0 30px 0;font-size: 90px;cursor:pointer;user-select: none;transform:rotate(180deg);" (click)="moveNext('holdB-'+itr,itr,'card-contentB-'+itr,'cardB-'+itr,arr.length)"> <span>&#8250;</span> </div>
+
+      <!-- <p>prevX {{ prevX[itr] | number:'1.0-0' }} | nextX {{ nextX[itr] | number:'1.0-0' }} </p> -->
+      <div 
+      id="mainA-{{itr}}" class="main"
+      (mousedown)="onMouseDown('holdA',itr,$event,'card-contentA-'+itr,numOfItr.length)"
+      (mousemove)="onMouseMove('holdA',itr,$event,'mainA-'+itr,'card-contentA-'+itr,'cardA-'+itr,arr.length)"
+      (mouseleave)="onMouseLeave('holdA',itr,'mainA-'+itr,'card-contentA-'+itr,'cardA-'+itr,arr.length)" 
+      (mouseup)="onMouseUp('holdA',itr,'mainA-'+itr,'card-contentA-'+itr,'cardA-'+itr,arr.length)"
+      >
+        <div id="card-contentA-{{itr}}" class="card-content">
+          <div *ngFor="let x of arr; let i = index">
+            <div id="cardA-{{itr}}" class="card">{{ i + 1 }}</div>
+          </div>
+        </div>
+
+      </div>
+
+
+    <div  [@disperse]="(getValue(showArrow2,'holdA',itr)) ? 'show' : 'hide'" style="margin:0 0 30px 0;font-size: 90px;cursor:pointer;user-select: none;transition: opacity 0.3s linear ;" (click)="moveNext('holdA',itr,'card-contentA-'+itr,'cardA-'+itr,arr.length)"> <span>&#8250;</span> </div>
+  </div>
+
+
+  <!-- <div style="display:none;margin:30px 0;font-size: 90px;cursor:pointer;user-select: none;" (click)="moveToFirst(itr,'card-content-'+itr,0.6)">
+    <span>&#x25cb;</span>
+  </div> -->
+
+
+
+
+</div>
